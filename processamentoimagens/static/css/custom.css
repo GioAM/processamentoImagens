@@ -1,0 +1,49 @@
+#page-top{
+    padding: 0 200px;
+}
+header div .h2{
+    margin-bottom: 50px;
+}
+.entrada{
+    margin-bottom: 30px;
+}
+.card-image{
+    display:flex;
+}
+.image{
+    margin-left: 50px;
+    text-align: center;
+}
+.image img{
+    max-width: 375px;
+    max-height: 375px;
+}
+.input-image{
+    width: 218px;
+    margin-top: 20px;
+}
+#inputImage1, #inputImage2{
+    font-size: 12px;
+}
+#resultado .image-result{
+    text-align: initial;
+}
+.resultado-imagem{
+    margin-bottom: 100px;
+}
+.input-value{
+    height: 50px;
+    width: 300px;
+    margin: auto;
+}
+#resultado{
+    display: flex;
+}
+.operacoes{
+    margin: auto;
+    display: flex;
+}
+.operacoes div{
+    text-align: center;
+     margin: 0 30px;
+}

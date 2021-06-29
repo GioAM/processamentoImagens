@@ -1,0 +1,70 @@
+{% extends 'default.html' %}
+{% load static %}
+{% block content %}
+<section id="images" xmlns="http://www.w3.org/1999/html">
+    <div class="card card-custom entrada">
+      <h5 class="card-header">Dados &nbsp;&nbsp;&nbsp;&nbsp;<img class="icon-image" src="{% static 'img/image-gallery.png' %}"></h5>
+      <div class="card-body card-image">
+
+        <div class="image">
+          <img src="{% static 'img/question.jpg' %}" class="rounded float-start" id="image1" alt="Imagem 1">
+          <div class="input-group mb-3 input-image">
+             <label class="input-group-text" for="inputImage1">Imagem 1</label>
+            <input type="file" name="image1" class="form-control" id="inputImage1"  accept="image/*" onchange="document.getElementById('image1').src = window.URL.createObjectURL(this.files[0])"/>
+          </div>
+        </div>
+        <div class="image">
+          <img src="{% static 'img/question.jpg' %}" class="rounded float-end" id="image2" alt="Imagem 2">
+          <div class="input-group mb-3 input-image">
+            <label class="input-group-text" for="inputImage2">Imagem 2</label>
+            <input type="file" name="image2" class="form-control" id="inputImage2" accept="image/*" onchange="document.getElementById('image2').src = window.URL.createObjectURL(this.files[0])"/>
+          </div>
+        </div>
+        <div class="input-value">
+            <div class="input-group">
+              <span class="input-group-text">Valor</span>
+              <input type="number" class="form-control" id="value">
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="card card-custom resultado-imagem">
+      <h5 class="card-header">Resultado &nbsp;&nbsp;&nbsp;&nbsp;<img class="icon-image" src="{% static 'img/computer.png' %}"></h5>
+      <div class="card-body table-responsive-sm" id='resultado'>
+          <div class="image image-result">
+            <img src="{% static 'img/question.jpg' %}" class="rounded float-start" id="imageResult" alt="Imagem 1">
+          </div>
+          <div class="operacoes">
+              <div class="conversao">
+                  <h5>Converter</h5>
+                  <div class="btn-group-vertical">
+                      <button type="button" id="rgbtobit" class="btn btn-primary">RGB para bit</button>
+                      <button type="button" id="rgbtogray" class="btn btn-primary">RGB para cinza</button>
+                      <button type="button" id="negativo" class="btn btn-primary">Negativo</button>
+                      <button type="button" id="histograma" class="btn btn-primary">Equalização </br>de Histograma</button>
+                  </div>
+            </div>
+            <div class="aritmeticas">
+              <h5>Operações Aritméticas</h5>
+              <div class="btn-group-vertical">
+                  <button type="button" id="adicao" class="btn btn-primary">Adição</button>
+                  <button type="button" id="subtracao" class="btn btn-primary">Subtração</button>
+                  <button type="button" id="multiplicacao" class="btn btn-primary">Multiplicação</button>
+                  <button type="button" id="divisao" class="btn btn-primary">Divisão</button>
+                  <button type="button" id="blending" class="btn btn-primary">Blending</button>
+              </div>
+            </div>
+            <div class="logicas">
+              <h5>Operações Lógicas</h5>
+              <div class="btn-group-vertical">
+                  <button type="button" id="and" class="btn btn-primary">AND</button>
+                  <button type="button" id="or" class="btn btn-primary">OR</button>
+                  <button type="button" id="xor" class="btn btn-primary">XOR</button>
+                  <button type="button" id="not" class="btn btn-primary">NOT</button>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
