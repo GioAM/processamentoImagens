@@ -29,7 +29,7 @@ def rgbtobit(request):
     value = int(request.GET['value'])
     if value > 0:
         limiar = value
-    ret, resultado = cv2.threshold(image1, limiar, 255, cv2.THRESH_BINARY)
+    resultado = functions.rgbtobit(image1, limiar)
     cv2.imwrite(path_result + resultado_image, resultado)
     data = {'resultado': resultado_image}
     return JsonResponse(data)
@@ -113,7 +113,7 @@ def f_and(request):
     resultado_image = "resultado" + strftime("%Y%m%d%H%M%S", gmtime()) + ".png"
     image1 = cv2.imread(path + request.GET['image1'])
     image2 = cv2.imread(path + request.GET['image2'])
-    resultado = cv2.bitwise_and(image1, image2)
+    resultado = functions.f_and(image1, image2)
     cv2.imwrite(path_result + resultado_image, resultado)
     data = {'resultado': resultado_image}
     return JsonResponse(data)
@@ -123,7 +123,7 @@ def f_or(request):
     resultado_image = "resultado" + strftime("%Y%m%d%H%M%S", gmtime()) + ".png"
     image1 = cv2.imread(path + request.GET['image1'])
     image2 = cv2.imread(path + request.GET['image2'])
-    resultado = cv2.bitwise_or(image1, image2)
+    resultado = functions.f_or(image1, image2)
     cv2.imwrite(path_result + resultado_image, resultado)
     data = {'resultado': resultado_image}
     return JsonResponse(data)
@@ -133,7 +133,7 @@ def f_xor(request):
     resultado_image = "resultado" + strftime("%Y%m%d%H%M%S", gmtime()) + ".png"
     image1 = cv2.imread(path + request.GET['image1'])
     image2 = cv2.imread(path + request.GET['image2'])
-    resultado = cv2.bitwise_xor(image1, image2)
+    resultado = functions.f_xor(image1, image2)
     cv2.imwrite(path_result + resultado_image, resultado)
     data = {'resultado': resultado_image}
     return JsonResponse(data)
@@ -142,7 +142,7 @@ def f_xor(request):
 def f_not(request):
     resultado_image = "resultado" + strftime("%Y%m%d%H%M%S", gmtime()) + ".png"
     image1 = cv2.imread(path + request.GET['image1'])
-    resultado = cv2.bitwise_not(image1)
+    resultado = functions.f_not(image1)
     cv2.imwrite(path_result + resultado_image, resultado)
     data = {'resultado': resultado_image}
     return JsonResponse(data)
