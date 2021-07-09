@@ -16,7 +16,7 @@ def rgbtogray(request):
     print(settings.MEDIA_URL)
     resultado_image = "resultado" + strftime("%Y%m%d%H%M%S", gmtime()) + ".png"
     image1 = cv2.imread(path + request.GET['image1'])
-    resultado = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)
+    resultado = functions.rgbtogray(image1)
     cv2.imwrite(path_result + resultado_image, resultado)
     data = {'resultado': resultado_image}
     return JsonResponse(data)
@@ -47,7 +47,7 @@ def negativo(request):
 def histograma(request):
     resultado_image = "resultado" + strftime("%Y%m%d%H%M%S", gmtime()) + ".png"
     image1 = cv2.imread(path + request.GET['image1'], 2)
-    resultado = cv2.equalizeHist(image1)
+    resultado = functions.equalizacao(image1)
     cv2.imwrite(path_result + resultado_image, resultado)
     data = {'resultado': resultado_image}
     return JsonResponse(data)
@@ -57,7 +57,7 @@ def adicao(request):
     resultado_image = "resultado" + strftime("%Y%m%d%H%M%S", gmtime()) + ".png"
     image1 = cv2.imread(path + request.GET['image1'])
     image2 = cv2.imread(path + request.GET['image2'])
-    resultado = cv2.add(image1, image2)
+    resultado = functions.adicao(image1, image2)
     cv2.imwrite(path_result + resultado_image, resultado)
     data = {'resultado': resultado_image}
     return JsonResponse(data)
@@ -67,7 +67,7 @@ def subtracao(request):
     resultado_image = "resultado" + strftime("%Y%m%d%H%M%S", gmtime()) + ".png"
     image1 = cv2.imread(path + request.GET['image1'])
     image2 = cv2.imread(path + request.GET['image2'])
-    resultado = cv2.subtract(image1, image2)
+    resultado = functions.subtracao(image1, image2)
     cv2.imwrite(path_result + resultado_image, resultado)
     data = {'resultado': resultado_image}
     return JsonResponse(data)
@@ -146,5 +146,3 @@ def f_not(request):
     cv2.imwrite(path_result + resultado_image, resultado)
     data = {'resultado': resultado_image}
     return JsonResponse(data)
-
-
