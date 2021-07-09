@@ -3,7 +3,7 @@
 {% block content %}
 <section id="images" xmlns="http://www.w3.org/1999/html">
     <div class="card card-custom entrada">
-      <h5 class="card-header">Dados &nbsp;&nbsp;&nbsp;&nbsp;<img class="icon-image" src="{% static 'img/image-gallery.png' %}"></h5>
+      <h5 class="card-header">Dados &nbsp;&nbsp;&nbsp;<img class="icon-image" src="{% static 'img/image-gallery.png' %}"></h5>
       <div class="card-body card-image">
 
         <div class="image">
@@ -63,8 +63,34 @@
                   <button type="button" id="not" class="btn btn-primary">NOT</button>
               </div>
             </div>
+            <div class="filtros">
+              <h5>Filtragens no Domínio Espacial</h5>
+              <div class="btn-group-vertical">
+                  <button type="button" id="media" class="btn btn-primary">Média</button>
+                  <button type="button" id="mediana" class="btn btn-primary">Mediana</button>
+                  <button type="button" id="gaussiana" class="btn btn-primary">Gaussiana</button>
+              </div>
+            </div>
+            <div class="morfologicas">
+              <h5>Operações Morfológicas</h5>
+              <div class="btn-group-vertical">
+                  <button type="button" id="dilatacao" class="btn btn-primary">Dilatação</button>
+                  <button type="button" id="erosao" class="btn btn-primary">Erosão</button>
+                  <button type="button" id="abertura" class="btn btn-primary">Abertura</button>
+                  <button type="button" id="fechamento" class="btn btn-primary">Fechamento</button>
+                  <button type="button" id="contorno" class="btn btn-primary">Contorno</button>
+              </div>
+            </div>
           </div>
       </div>
     </div>
+    <div class="toast position-absolute" role="alert" aria-live="assertive" aria-atomic="true" id="information">
+          <div class="toast-header">
+            <img src="{% static 'img/information.png' %}" class="rounded me-2">
+            <strong class="me-auto" id="title-toast"></strong>
+          </div>
+          <div class="toast-body" id="message-toast">
+          </div>
+        </div>
   </section>
 {% endblock %}

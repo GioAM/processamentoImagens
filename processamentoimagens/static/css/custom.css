@@ -17,6 +17,7 @@ header div .h2{
 .image img{
     max-width: 375px;
     max-height: 375px;
+    margin-bottom: 30px;
 }
 .input-image{
     width: 218px;
@@ -24,6 +25,8 @@ header div .h2{
 }
 #inputImage1, #inputImage2{
     font-size: 12px;
+    height: 32px;
+    width: 0px;
 }
 #resultado .image-result{
     text-align: initial;
@@ -46,4 +49,17 @@ header div .h2{
 .operacoes div{
     text-align: center;
      margin: 0 30px;
+}
+.input-group-text{
+    height: 32px;
+}
+#information{
+	width: 312px;
+	position: fixed;
+	bottom: 0px;
+	width: 312px;
+	left: 30px;
+}
+#value{
+    height: 32px;
 }
