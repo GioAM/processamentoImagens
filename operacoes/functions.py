@@ -102,10 +102,6 @@ def subtracao(image1, image2):
     return new_image
 
 
-def blending(image):
-    return image
-
-
 def equalizacao(image1, z_max=255):
     height, width = image1.shape
     total = height * width * 1.
